@@ -1,0 +1,150 @@
+{
+  "info": {
+    "name": "merchants-backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/auth/register",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "auth",
+            "register"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\\n  \"username\": \"user1\",\\n  \"password\": \"pass1\"\\n}"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/auth/login",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\\n  \"username\": \"admin\",\\n  \"password\": \"admin123\"\\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Merchant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/merchants",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "api",
+            "merchants"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\\n  \"name\":\"Shop A\",\\n  \"logoUrl\":\"https://a.png\",\\n  \"businessLicenseUrl\":\"https://bl.png\",\\n  \"phone\":\"123\",\\n  \"address\":\"Addr\"\\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/products",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\\n  \"name\":\"Prod1\",\\n  \"description\":\"Desc\",\\n  \"price\":10.0,\\n  \"stock\":100,\\n  \"merchantId\":1\\n}"
+        }
+      }
+    },
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/orders",
+          "host": [
+            "localhost:8080"
+          ],
+          "path": [
+            "api",
+            "orders"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\\n  \"userId\":1,\\n  \"total\":10.0,\\n  \"items\":[{\"productId\":1,\"quantity\":1,\"price\":10.0}]\\n}"
+        }
+      }
+    }
+  ]
+}

@@ -1,20 +1,5 @@
 version: '3.8'
 services:
-#  merchants-back:
-#    build: .
-#    container_name: merchants-back
-#    depends_on:
-#      - postgres
-#      - redis
-#      - kafka
-#    ports:
-#      - "8080:8080"
-#    environment:
-#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/merchants
-#      SPRING_DATASOURCE_USERNAME: postgres
-#      SPRING_DATASOURCE_PASSWORD: postgres
-#      SPRING_REDIS_HOST: redis
-#      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
 
   postgres:
     image: postgres:13

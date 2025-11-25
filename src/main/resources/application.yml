@@ -16,7 +16,7 @@ spring:
     port: 6379
   kafka:
     bootstrap-servers: localhost:9092
-
+# server的接口
 server:
   port: 8080
 

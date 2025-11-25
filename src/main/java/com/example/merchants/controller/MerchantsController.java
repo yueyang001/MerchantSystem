@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/merchants")
+@CrossOrigin(origins = "*")
 public class MerchantsController {
 
     private final MerchantsService service;
